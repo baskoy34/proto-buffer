@@ -1,0 +1,29 @@
+syntax = "proto3";
+package product;
+
+option java_multiple_files = true;
+option java_package =  "com.proto.rest";
+
+message Products{
+    repeated Product product = 1;
+}
+
+message Product{
+    int32 id = 1;
+    string name = 2;
+    int32 stock = 3;
+    Type type = 4;
+}
+
+message Basket {
+    int32 id = 1;
+    repeated Product product = 2;
+    float total = 3;
+}
+
+enum Type {
+        NON = 0;
+        ELECTRONIC = 1;
+        FASHION = 2;
+        SPORT = 3;
+      }
